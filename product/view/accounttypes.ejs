@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -30,7 +31,6 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Middle man</a></li>
         <li><a href="#">Support</a></li>
         <li><a href="#">Upgrade</a></li>
         <li><a href="#">Contact Us</a></li>
@@ -42,26 +42,33 @@
     </div>
   </div>
 </nav>
-
+<div>
+  <h1>
+      Game categories
+  </h1>
+</div>
 <div class="container">    
   
 <div class="row">
   <% for (var i = 0; i < data.length; i++) {%>
-<a href="/cards"><div class="card">
-  <img src=<%= data[i].urlimage %> alt="Avatar" style="width:100%">
+<div class="card">
+  <a href="/gameaccount?title=<%=data[i].title%>"><img src=<%= data[i].urlimage %> alt="Avatar" style="width:100%">
+</a>
   <div class="container">
-    <h4><b><%=   data[i].accounttype %></b></h4>
-    <h4><b><%=   data[i].title %></b></h4> 
-    <h4><b><%=   data[i].description %></b></h4> 
+    <h6><b><%=   data[i].accounttype %></b></h6>
+    <h6><%=   data[i].title %></h6> 
+    <h6><%=   data[i].description %></h6> 
     <div class="w3-padding w3-xlarge w3-teal">
-    <div style="margin-left: 100px;">
-      <a href="dlt"> <i class="fas fa-trash"></i></a>
-      <a href="dlt"> <i class="fas fa-pen"></i></a>
+    <div style="margin-left: 70px;">
+       <button> <a href="/removeaccounttype?id=<%=data[i].id %>" <i class="fas fa-trash"></i></a></button>
+      <button> <a href="/updateaccounttype?id=<%=data[i].id %>" <i class="fas fa-pen"></i></a></button>
+     
+
   </div>  
   </div>
   </div>
 </div>
-</a>
+
     <%}%> 
 </div>
 

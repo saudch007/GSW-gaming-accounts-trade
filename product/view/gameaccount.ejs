@@ -29,7 +29,6 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Middle man</a></li>
           <li><a href="#">Support</a></li>
           <li><a href="#">Upgrade</a></li>
           <li><a href="#">Contact Us</a></li>
@@ -41,29 +40,16 @@
       </div>
     </div>
   </nav>
-  
-<div class="main">
-    <template><div class="card">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvhy_-kXRyzWhE3_bP6BuAdhrJuHwoSz9Q0w&usqp=CAU" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>John Doe</b></h4> 
-    <p>Architect & Engineer</p>
-  <a href="payment">  <button class="button button1" >buy</button></a>
-  </div>
-</div>
-</template>
-</div>
 <div class="row">
   <% for (var i = 0; i < data.length; i++) {%>
 <div class="card">
   <img src=<%= data[i].urlimage %> alt="Avatar" style="width:100%">
   <div class="container">
-    
-    <h4><b><%=   data[i].title %></b></h4> 
-    <p><%=   data[i].description %></p> 
-    <div class="w3-padding w3-xlarge w3-teal">
+    <h6><b><%=   data[i].title %></b></h6> 
+    <h6><%=   data[i].description %></h6> 
+    <div class="w3-xlarge w3-teal">
     <div style="margin-left: 80px;">
-      <button> <a href="/remove?id=<%=data[i].id %>" <i class="fas fa-trash"></i></a></button>
+      <button> <a href="/remove?id=<%=data[i].id %>&title=<%=data[i].title%>" <i class="fas fa-trash"></i></a></button>
       <button> <a href="/update?id=<%=data[i].id %>" <i class="fas fa-pen"></i></a></button>
      
 

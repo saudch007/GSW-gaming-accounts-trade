@@ -76,10 +76,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </head>
 <body>
     <div class="form-popup" id="myForm">
-        <form action="/updatedata?id=<%=data.id%>" method="post" class="form-container">
+        <form action="/updateacctype?id=<%=data.id%>" method="post" class="form-container">
           <center>
             <h2>Update Account info</h2>
           </center>
+          <label for="ty"><b>Tittle</b></label>
+          <input type="text" placeholder="Enter Tittle" id="ty" name="acctype" required>
       
           <label for="tit"><b>Tittle</b></label>
           <input type="text" placeholder="Enter Tittle" name="title" required>
